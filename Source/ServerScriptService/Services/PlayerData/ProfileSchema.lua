@@ -1,3 +1,0 @@
-local ProfileSchema = {}
-
-return ProfileSchema

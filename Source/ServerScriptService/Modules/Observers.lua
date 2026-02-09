@@ -1,3 +1,0 @@
-local Observers = {}
-
-return Observers
