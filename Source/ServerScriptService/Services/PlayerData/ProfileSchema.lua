@@ -1,0 +1,3 @@
+local ProfileSchema = {}
+
+return ProfileSchema

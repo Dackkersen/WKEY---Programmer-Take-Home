@@ -1,0 +1,5 @@
+{
+    "luau-lsp.sourcemap.rojoProjectFile": "default.project.json",
+    "stylua.targetReleaseVersion": "latest",
+    "editor.formatOnSave": true,
+}

@@ -1,0 +1,24 @@
+{
+	"name": "SyscoreTemplate",
+	"tree": {
+		"$className": "DataModel",
+
+		"ReplicatedFirst": {
+			"$path": "Source/ReplicatedFirst",
+			"$ignoreUnknownInstances": true
+		},
+
+		"ReplicatedStorage": {
+			"$path": "Source/ReplicatedStorage",
+			"$ignoreUnknownInstances": true,
+			"Packages": {
+				"$path": "Packages"
+			}
+		},
+
+		"ServerScriptService": {
+			"$path": "Source/ServerScriptService",
+			"$ignoreUnknownInstances": true
+		}
+	}
+}
