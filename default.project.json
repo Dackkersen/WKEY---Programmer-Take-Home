@@ -1,13 +1,48 @@
 {
-	"name": "SyscoreTemplate",
+	"name": "WKey--Programmer-Take-Home",
 	"tree": {
 		"$className": "DataModel",
-
+		"Workspace": {
+			"$path": "Source/Workspace",
+			"$ignoreUnknownInstances": true
+		},
+		"Lighting": {
+			"$path": "Source/Lighting",
+			"$ignoreUnknownInstances": true,
+			"$properties": {
+				"Ambient": {
+					"Color3": [
+						0.27451,
+						0.27451,
+						0.27451
+					]
+				},
+				"Brightness": 3,
+				"EnvironmentDiffuseScale": 1,
+				"EnvironmentSpecularScale": 1,
+				"GlobalShadows": true,
+				"OutdoorAmbient": {
+					"Color3": [
+						0.27451,
+						0.27451,
+						0.27451
+					]
+				},
+				"PrioritizeLightingQuality": true,
+				"GeographicLatitude": 0
+			}
+		},
+		"MaterialService": {
+			"$path": "Source/MaterialService",
+			"$ignoreUnknownInstances": true,
+			"$properties": {
+				"Use2022Materials": true
+			}
+		},
 		"ReplicatedFirst": {
 			"$path": "Source/ReplicatedFirst",
 			"$ignoreUnknownInstances": true
 		},
-
 		"ReplicatedStorage": {
 			"$path": "Source/ReplicatedStorage",
 			"$ignoreUnknownInstances": true,
@@ -15,9 +50,12 @@
 				"$path": "Packages"
 			}
 		},
-
 		"ServerScriptService": {
 			"$path": "Source/ServerScriptService",
+			"$ignoreUnknownInstances": true
+		},
+		"StarterGui": {
+			"$path": "Source/StarterGui",
 			"$ignoreUnknownInstances": true
 		}
 	}

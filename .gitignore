@@ -5,3 +5,9 @@
 # Folders
 Packages
 ServerPackages
+
+# Roblox
+*.rbxlx
+*.rbxl
+*.rbxlx.lock
+*.rbxl.lock
