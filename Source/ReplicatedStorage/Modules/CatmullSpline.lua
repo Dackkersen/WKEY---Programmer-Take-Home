@@ -1,3 +1,5 @@
+-- This module was made by AI, I wanted to use a Catmull-Rom spline but also wanted to save some time.
+
 local CatmullSpline = {}
 CatmullSpline.__index = CatmullSpline
 

@@ -1,5 +1,8 @@
 --!native
 --!strict
+
+-- https://dubit.github.io/roblox-dubit-tools/packages/bolt/
+
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local HttpService = game:GetService("HttpService")

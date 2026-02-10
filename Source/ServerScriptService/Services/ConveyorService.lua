@@ -5,8 +5,15 @@ local RunService = game:GetService("RunService")
 local Network = require(ReplicatedStorage.Modules.Network)
 
 local SpawnInterval = 1
+local BagTypes = {
+	"Duffel",
+	"Backpack",
+	"Bag",
+}
 
 local spawnedBags = {}
+local bagsCompleted = 0
+local ownerChosen = false
 
 local ConveyorService = {
 	Priority = 99,
@@ -29,6 +36,10 @@ local function getRandomMaterial(): Enum.Material
 	return material
 end
 
+local function getRandomBagType(): string
+	return BagTypes[math.random(1, #BagTypes)]
+end
+
 local function getBagById(id: string)
 	for _, bag in spawnedBags do
 		if bag.Id ~= id then
@@ -48,11 +59,13 @@ function ConveyorService:SpawnBag()
 	local randomColor: Color3 = getRandomColor()
 	local randomMaterial: Enum.Material = getRandomMaterial()
 	local spawnTime: number = workspace:GetServerTimeNow()
+	local bagType: string = getRandomBagType()
 
 	local bag = {
 		Id = HttpService:GenerateGUID(false),
 		Color = randomColor,
 		Material = randomMaterial,
+		Type = bagType,
 		SpawnTime = spawnTime,
 	}
 
@@ -61,6 +74,13 @@ function ConveyorService:SpawnBag()
 
 	local lifetime = 100 / 10
 	task.delay(lifetime, function()
+		bagsCompleted += 1
+
+		if bagsCompleted >= 20 then
+			bagsCompleted = 0
+			Network.Nuke:FireAllClients()
+		end
+
 		for i = #spawnedBags, 1, -1 do
 			if spawnedBags[i] == bag then
 				table.remove(spawnedBags, i)
@@ -74,6 +94,10 @@ function ConveyorService:Init()
 	local startTime = tick()
 
 	Network.GetSpawnedBags.OnServerInvoke = function()
+		if not ownerChosen then
+			ownerChosen = true
+			return spawnedBags, false
+		end
 		return spawnedBags
 	end
 

@@ -57,6 +57,10 @@
 		"StarterGui": {
 			"$path": "Source/StarterGui",
 			"$ignoreUnknownInstances": true
+		},
+		"SoundService": {
+			"$path": "Source/SoundService",
+			"$ignoreUnknownInstances": true
 		}
 	}
 }
