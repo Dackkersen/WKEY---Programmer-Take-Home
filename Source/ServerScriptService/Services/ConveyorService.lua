@@ -16,7 +16,7 @@ local bagsCompleted = 0
 local ownerChosen = false
 
 local ConveyorService = {
-	Priority = 99,
+	Priority = 1,
 	Name = "ConveyorService",
 	Icon = "🧤",
 }

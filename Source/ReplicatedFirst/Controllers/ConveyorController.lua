@@ -1,9 +1,7 @@
-local Debris = game:GetService("Debris")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local SoundService = game:GetService("SoundService")
-local TweenService = game:GetService("TweenService")
 
 export type BagInfo = {
 	Color: Color3,
@@ -35,7 +33,7 @@ local bags = {}
 local propBags = {}
 
 local ConveyorController = {
-	Priority = 99,
+	Priority = 1,
 	Name = "ConveyorController",
 	Icon = "🧤",
 }
